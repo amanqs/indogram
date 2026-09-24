@@ -1,8 +1,6 @@
 # Development
 
-# Anchored: a bare `docs` matches at any depth and hid the tracked `compiler/docs/`
-#  from `ruff`, which respects `.gitignore` during file discovery.
-/docs/
+# /docs/ tracked for GitHub Pages portal
 *.session
 config.ini
 main.py

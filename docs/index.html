@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indogram - Telegram MTProto API Framework for Python</title>
+    <meta name="description" content="Dokumentasi resmi Indogram: Framework Telegram MTProto asinkron modern untuk Python dengan dual-import compatibility (indogram & pyrogram).">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+</head>
+<body class="dark-theme">
+    <!-- Background Glow Effects -->
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+
+    <!-- Header / Navbar -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="#" class="brand">
+                <span class="brand-icon">⚡</span>
+                <span class="brand-name">Indogram</span>
+                <span class="badge-version">v2.2.26</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="#overview">Tentang</a>
+                <a href="#quickstart">Mulai Cepat</a>
+                <a href="#examples">Contoh Kode</a>
+                <a href="#api-reference">Referensi API</a>
+                <a href="#indonesian-utils">Utilitas ID 🇮🇩</a>
+            </nav>
+
+            <div class="header-actions">
+                <div class="search-trigger" id="searchTriggerBtn">
+                    <span class="search-icon">🔍</span>
+                    <span class="search-placeholder">Cari API...</span>
+                    <kbd class="kbd-shortcut">Ctrl K</kbd>
+                </div>
+                <a href="https://pypi.org/project/indogram/" target="_blank" rel="noopener" class="icon-btn pypi-btn" title="Lihat di PyPI">
+                    <span class="pypi-badge-icon">📦</span>
+                    <span>PyPI</span>
+                </a>
+                <a href="https://github.com/amanqs/indogram" target="_blank" rel="noopener" class="icon-btn github-btn" title="GitHub Repository">
+                    <svg height="20" width="20" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                    </svg>
+                    <span>GitHub</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="overview">
+        <div class="hero-content">
+            <div class="hero-pill">
+                <span class="pill-spark">🔥</span>
+                <span>Telah Rilis di PyPI &bull; Dukungan Penuh Dual-Import</span>
+            </div>
+            
+            <h1 class="hero-title">
+                Telegram MTProto API Framework <br>
+                <span class="gradient-text">Elegan, Asinkron & Bertenaga</span>
+            </h1>
+
+            <p class="hero-subtitle">
+                Bangun bot Telegram dan otomatisasi akun (userbot) berkecepatan tinggi dengan Python.
+                100% kompatibel sebagai drop-in replacement untuk <code>pyrogram</code> dan dilengkapi helper khas pengembang Indonesia.
+            </p>
+
+            <!-- Install Command Card -->
+            <div class="install-card">
+                <span class="terminal-prefix">$</span>
+                <span class="terminal-cmd" id="installCmd">pip install indogram</span>
+                <button class="copy-btn" id="copyInstallBtn" title="Salin Perintah">
+                    <span class="copy-icon">📋</span>
+                    <span class="copy-text">Salin</span>
+                </button>
+            </div>
+
+            <div class="hero-cta-group">
+                <a href="#quickstart" class="btn-primary">
+                    <span>Mulai Sekarang</span>
+                    <span class="arrow-icon">→</span>
+                </a>
+                <a href="#api-reference" class="btn-secondary">
+                    <span>Eksplorasi API</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section class="features-section">
+        <div class="section-container">
+            <h2 class="section-heading">Mengapa Memilih Indogram?</h2>
+            <p class="section-subheading">Dibangun di atas fondasi kuat MTProto dengan fitur modern dan kemudahan maksimal.</p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper cyan-glow">🔄</div>
+                    <h3>Dual-Import Compatibility</h3>
+                    <p>Gunakan <code>import indogram</code> untuk proyek baru, atau tetap gunakan <code>import pyrogram</code> untuk bot yang sudah ada tanpa perlu mengubah kode lama.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper purple-glow">⚡</div>
+                    <h3>Asinkron & Kecepatan Tinggi</h3>
+                    <p>Ditenagai oleh arsitektur <code>asyncio</code>, dengan opsi akselerasi C melalui TgCrypto dan uvloop untuk throughput pesan maksimal.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper emerald-glow">🇮🇩</div>
+                    <h3>Utilitas Khas Indonesia</h3>
+                    <p>Helper bawaan untuk zona waktu (<code>WIB</code>, <code>WITA</code>, <code>WIT</code>), formatting mata uang Rupiah (<code>format_rupiah</code>), dan format tanggal Indonesia.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper amber-glow">📱</div>
+                    <h3>Fitur MTProto Terbaru</h3>
+                    <p>Mendukung fitur-fitur Telegram terkini: Stories, Forum Topics, Business Accounts, Star Gifts, Reactions, dan Channel Direct.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper blue-glow">🛡️</div>
+                    <h3>Type-Hinted & PEP 561</h3>
+                    <p>Mendukung auto-completion cerdas di Visual Studio Code, Cursor, PyCharm, dan Antigravity IDE dengan anotasi tipe lengkap.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper rose-glow">🤖</div>
+                    <h3>Dual Mode: Bot & Userbot</h3>
+                    <p>Satu library untuk segalanya: bot resmi via Bot Token (@BotFather) atau client kustom langsung menggunakan akun pengguna Telegram.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quickstart Step by Step -->
+    <section class="quickstart-section" id="quickstart">
+        <div class="section-container">
+            <h2 class="section-heading">Panduan 3 Langkah Memulai</h2>
+            <p class="section-subheading">Dari nol hingga bot pertama Anda online dalam waktu kurang dari 5 menit.</p>
+
+            <div class="steps-flow">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-body">
+                        <h3>Dapatkan Kredensial Telegram</h3>
+                        <p>Kunjungi <a href="https://my.telegram.org" target="_blank" rel="noopener">my.telegram.org</a> untuk membuat aplikasi dan mendapatkan <code>API_ID</code> serta <code>API_HASH</code>. Buat bot token di <a href="https://t.me/BotFather" target="_blank" rel="noopener">@BotFather</a>.</p>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-body">
+                        <h3>Install Library Indogram</h3>
+                        <p>Buka terminal dan install paket resmi dari PyPI:</p>
+                        <div class="code-snippet-box">
+                            <code>pip install indogram</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-body">
+                        <h3>Tulis & Jalankan Kode</h3>
+                        <p>Simpan kode ke file <code>bot.py</code> lalu jalankan dengan <code>python bot.py</code>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Code Examples Showcase -->
+    <section class="examples-section" id="examples">
+        <div class="section-container">
+            <h2 class="section-heading">Contoh Kode Siap Pakai</h2>
+            <p class="section-subheading">Pilih contoh skenario di bawah ini untuk melihat implementasi nyatanya.</p>
+
+            <div class="code-tabs-container">
+                <div class="tabs-header">
+                    <button class="tab-btn active" data-tab="tab-echo">🤖 Echo Bot</button>
+                    <button class="tab-btn" data-tab="tab-button">🔘 Tombol Inline & Callback</button>
+                    <button class="tab-btn" data-tab="tab-userbot">👤 Userbot (Akun Pribadi)</button>
+                    <button class="tab-btn" data-tab="tab-utils">🇮🇩 Utilitas Indonesia</button>
+                    <button class="tab-btn" data-tab="tab-pyro">🔄 Drop-in Pyrogram</button>
+                </div>
+
+                <div class="tab-contents">
+                    <!-- Tab 1: Echo Bot -->
+                    <div class="tab-pane active" id="tab-echo">
+                        <div class="code-header">
+                            <span class="file-name">echo_bot.py</span>
+                            <button class="copy-code-btn" data-target="code-echo">Salin Kode</button>
+                        </div>
+                        <pre><code id="code-echo" class="language-python">from indogram import Client, filters
+from indogram.types import Message
+
+# Ganti dengan kredensial Anda dari my.telegram.org & @BotFather
+app = Client(
+    "echo_bot",
+    api_id=1234567,
+    api_hash="your_api_hash_here",
+    bot_token="your_bot_token_here",
+)
+
+@app.on_message(filters.command("start"))
+async def start_handler(client: Client, message: Message):
+    await message.reply_text(
+        f"👋 Halo **{message.from_user.first_name}**!\n"
+        "Selamat datang di bot bertenaga **Indogram**!"
+    )
+
+@app.on_message(filters.text & filters.private)
+async def echo_handler(client: Client, message: Message):
+    await message.reply_text(f"Anda berkata: {message.text}")
+
+if __name__ == "__main__":
+    print("Bot Indogram sedang berjalan...")
+    app.run()</code></pre>
+                    </div>
+
+                    <!-- Tab 2: Button Bot -->
+                    <div class="tab-pane" id="tab-button">
+                        <div class="code-header">
+                            <span class="file-name">button_bot.py</span>
+                            <button class="copy-code-btn" data-target="code-button">Salin Kode</button>
+                        </div>
+                        <pre><code id="code-button" class="language-python">from indogram import Client, filters
+from indogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, Message
+from indogram.utils import format_rupiah
+
+app = Client("button_bot", api_id=1234567, api_hash="HASH", bot_token="TOKEN")
+
+@app.on_message(filters.command("menu"))
+async def menu_handler(client: Client, message: Message):
+    keyboard = InlineKeyboardMarkup([
+        [
+            InlineKeyboardButton("🛒 Cek Harga", callback_data="check_price"),
+            InlineKeyboardButton("ℹ️ Info", callback_data="info")
+        ],
+        [
+            InlineKeyboardButton("🌐 Repository", url="https://github.com/amanqs/indogram")
+        ]
+    ])
+    await message.reply_text("Silakan pilih menu:", reply_markup=keyboard)
+
+@app.on_callback_query()
+async def callback_handler(client: Client, query: CallbackQuery):
+    if query.data == "check_price":
+        # Gunakan utilitas format_rupiah bawaan Indogram
+        harga = format_rupiah(50000)
+        await query.answer(f"Harga langganan: {harga}", show_alert=True)
+    elif query.data == "info":
+        await query.answer()
+        await query.message.edit_text("Indogram adalah framework Telegram MTProto modern.")
+
+app.run()</code></pre>
+                    </div>
+
+                    <!-- Tab 3: Userbot -->
+                    <div class="tab-pane" id="tab-userbot">
+                        <div class="code-header">
+                            <span class="file-name">userbot.py</span>
+                            <button class="copy-code-btn" data-target="code-userbot">Salin Kode</button>
+                        </div>
+                        <pre><code id="code-userbot" class="language-python">import asyncio
+from indogram import Client, filters
+from indogram.types import Message
+from indogram.utils import format_date_id, now_wib
+
+# Login akun pengguna Telegram biasa (Userbot)
+app = Client("my_account", api_id=1234567, api_hash="your_api_hash")
+
+@app.on_message(filters.me & filters.command("ping", prefixes="."))
+async def ping(client: Client, message: Message):
+    waktu = format_date_id(now_wib())
+    await message.edit_text(f"🏓 **Pong!**\nServer: `{waktu}`")
+
+async def main():
+    async with app:
+        me = await app.get_me()
+        print(f"Userbot aktif sebagai: {me.first_name} (@{me.username})")
+        await asyncio.Event().wait()
+
+if __name__ == "__main__":
+    asyncio.run(main())</code></pre>
+                    </div>
+
+                    <!-- Tab 4: Utils -->
+                    <div class="tab-pane" id="tab-utils">
+                        <div class="code-header">
+                            <span class="file-name">indonesian_helpers.py</span>
+                            <button class="copy-code-btn" data-target="code-utils">Salin Kode</button>
+                        </div>
+                        <pre><code id="code-utils" class="language-python">from indogram.utils import (
+    WIB, WITA, WIT,
+    now_wib,
+    format_rupiah,
+    format_bytes,
+    format_date_id
+)
+
+# 1. Format Mata Uang Rupiah
+print(format_rupiah(1500000))
+# Output: 'Rp 1.500.000'
+
+# 2. Waktu Saat Ini Zona WIB (UTC+7)
+print(now_wib())
+# Output: 2026-09-24 23:55:00.123456+07:00
+
+# 3. Format Tanggal Bahasa Indonesia
+print(format_date_id())
+# Output: 'Kamis, 24 September 2026, 23:55 WIB'
+
+# 4. Format Ukuran File/Memory
+print(format_bytes(52428800))
+# Output: '50.00 MB'</code></pre>
+                    </div>
+
+                    <!-- Tab 5: Drop-in Pyrogram -->
+                    <div class="tab-pane" id="tab-pyro">
+                        <div class="code-header">
+                            <span class="file-name">legacy_bot.py</span>
+                            <button class="copy-code-btn" data-target="code-pyro">Salin Kode</button>
+                        </div>
+                        <pre><code id="code-pyro" class="language-python"># Kode lama yang mengimpor 'pyrogram' tetap bekerja 100% tanpa ubahan!
+from pyrogram import Client, filters
+
+app = Client("my_bot", bot_token="TOKEN")
+
+@app.on_message(filters.command("hello"))
+async def hello(client, message):
+    await message.reply("Kode Pyrogram Anda berjalan mulus di atas Indogram!")
+
+app.run()</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- API Reference / Interactive Search Explorer -->
+    <section class="api-section" id="api-reference">
+        <div class="section-container">
+            <h2 class="section-heading">Eksplorasi Referensi API</h2>
+            <p class="section-subheading">Koleksi method, filter, dan utilitas yang sering digunakan di Indogram.</p>
+
+            <div class="api-filter-bar">
+                <input type="text" id="apiSearchInput" class="api-search-input" placeholder="Ketik untuk memfilter method (contoh: send_message, reply, format_rupiah, filters)...">
+                <div class="category-chips">
+                    <button class="chip active" data-category="all">Semua</button>
+                    <button class="chip" data-category="client">Client</button>
+                    <button class="chip" data-category="filters">Filters</button>
+                    <button class="chip" data-category="types">Types</button>
+                    <button class="chip" data-category="utils">Utilitas ID</button>
+                </div>
+            </div>
+
+            <div class="api-cards-grid" id="apiCardsGrid">
+                <!-- Client.send_message -->
+                <div class="api-card" data-category="client">
+                    <div class="api-badge client-badge">Client</div>
+                    <h4 class="api-name">Client.send_message(chat_id, text, ...)</h4>
+                    <p class="api-desc">Mengirim pesan teks ke pengguna, grup, atau channel Telegram.</p>
+                    <div class="api-example"><code>await app.send_message("chat_id", "Halo Dunia!")</code></div>
+                </div>
+
+                <!-- Client.send_photo -->
+                <div class="api-card" data-category="client">
+                    <div class="api-badge client-badge">Client</div>
+                    <h4 class="api-name">Client.send_photo(chat_id, photo, caption, ...)</h4>
+                    <p class="api-desc">Mengirim gambar/foto dengan caption dan parse mode Markdown atau HTML.</p>
+                    <div class="api-example"><code>await app.send_photo("chat_id", "gambar.jpg", caption="Lihat ini!")</code></div>
+                </div>
+
+                <!-- Client.get_me -->
+                <div class="api-card" data-category="client">
+                    <div class="api-badge client-badge">Client</div>
+                    <h4 class="api-name">Client.get_me()</h4>
+                    <p class="api-desc">Mengambil informasi akun atau bot yang saat ini sedang aktif (User object).</p>
+                    <div class="api-example"><code>me = await app.get_me()</code></div>
+                </div>
+
+                <!-- filters.command -->
+                <div class="api-card" data-category="filters">
+                    <div class="api-badge filter-badge">Filters</div>
+                    <h4 class="api-name">filters.command(commands, prefixes)</h4>
+                    <p class="api-desc">Memfilter pesan yang diawali tanda perintah (default <code>/</code>, contoh: <code>filters.command("start")</code>).</p>
+                    <div class="api-example"><code>@app.on_message(filters.command(["start", "help"]))</code></div>
+                </div>
+
+                <!-- filters.text & private -->
+                <div class="api-card" data-category="filters">
+                    <div class="api-badge filter-badge">Filters</div>
+                    <h4 class="api-name">filters.text & filters.private</h4>
+                    <p class="api-desc">Kombinasi operator logika (AND <code>&</code>, OR <code>|</code>, NOT <code>~</code>) untuk menyaring pesan.</p>
+                    <div class="api-example"><code>@app.on_message(filters.text & ~filters.bot)</code></div>
+                </div>
+
+                <!-- Message.reply_text -->
+                <div class="api-card" data-category="types">
+                    <div class="api-badge type-badge">Types</div>
+                    <h4 class="api-name">Message.reply_text(text, ...)</h4>
+                    <p class="api-desc">Membalas pesan yang masuk secara langsung tanpa perlu mengetikkan ID chat.</p>
+                    <div class="api-example"><code>await message.reply_text("Dibalas otomatis!")</code></div>
+                </div>
+
+                <!-- format_rupiah -->
+                <div class="api-card" data-category="utils" id="indonesian-utils">
+                    <div class="api-badge utils-badge">Utilitas ID</div>
+                    <h4 class="api-name">format_rupiah(amount, prefix="Rp ")</h4>
+                    <p class="api-desc">Memformat angka desimal/integer menjadi format standar mata uang Rupiah Indonesia.</p>
+                    <div class="api-example"><code>format_rupiah(75000) # -> 'Rp 75.000'</code></div>
+                </div>
+
+                <!-- format_date_id -->
+                <div class="api-card" data-category="utils">
+                    <div class="api-badge utils-badge">Utilitas ID</div>
+                    <h4 class="api-name">format_date_id(dt=None, include_time=True)</h4>
+                    <p class="api-desc">Format tanggal dan waktu otomatis dalam bahasa Indonesia dengan penanda zona waktu.</p>
+                    <div class="api-example"><code>format_date_id() # -> 'Kamis, 24 September 2026, 23:55 WIB'</code></div>
+                </div>
+
+                <!-- WIB / now_wib -->
+                <div class="api-card" data-category="utils">
+                    <div class="api-badge utils-badge">Utilitas ID</div>
+                    <h4 class="api-name">WIB, WITA, WIT / now_wib()</h4>
+                    <p class="api-desc">Objek zona waktu bawaan (UTC+7, UTC+8, UTC+9) untuk kemudahan penanganan jam server.</p>
+                    <div class="api-example"><code>now = now_wib() # Datetime dengan timezone WIB</code></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Modal -->
+    <div class="modal-overlay" id="searchModal">
+        <div class="search-modal-box">
+            <div class="search-modal-header">
+                <span class="search-modal-icon">🔍</span>
+                <input type="text" id="modalSearchInput" placeholder="Cari fungsi, method, filter..." autocomplete="off">
+                <button class="close-modal-btn" id="closeModalBtn">Esc</button>
+            </div>
+            <div class="search-modal-results" id="modalSearchResults">
+                <!-- Populated dynamically by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="brand">
+                    <span class="brand-icon">⚡</span>
+                    <span class="brand-name">Indogram</span>
+                </div>
+                <p class="footer-tagline">Telegram MTProto API Framework for Python &bull; Licensed under LGPL-3.0</p>
+                <p class="footer-copy">&copy; 2026 Indogram Developers & Amanqs. Derived from Kurigram & Pyrogram.</p>
+            </div>
+
+            <div class="footer-links-group">
+                <div class="footer-col">
+                    <h4>Proyek</h4>
+                    <a href="https://pypi.org/project/indogram/" target="_blank" rel="noopener">PyPI Package</a>
+                    <a href="https://github.com/amanqs/indogram" target="_blank" rel="noopener">GitHub Repository</a>
+                    <a href="https://github.com/amanqs/indogram/releases" target="_blank" rel="noopener">Daftar Rilis</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Bantuan & Komunitas</h4>
+                    <a href="https://github.com/amanqs/indogram/issues" target="_blank" rel="noopener">Laporkan Isu</a>
+                    <a href="https://github.com/amanqs/indogram/discussions" target="_blank" rel="noopener">Forum Diskusi</a>
+                    <a href="https://my.telegram.org" target="_blank" rel="noopener">Telegram Core API</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="app.js"></script>
+</body>
+</html>

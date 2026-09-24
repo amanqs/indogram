@@ -14,7 +14,11 @@
     <img src="https://img.shields.io/badge/Python-3.10%2B-blue.svg?logo=python&logoColor=white" alt="Python 3.10+" />
     <img src="https://img.shields.io/badge/License-LGPLv3-green.svg" alt="License" />
     <img src="https://img.shields.io/badge/AsyncIO-Ready-orange.svg" alt="AsyncIO Ready" />
-    <img src="https://img.shields.io/badge/Compatibility-Pyrogram%20Drop--in-brightgreen.svg" alt="Pyrogram Compatible" />
+    <img src="https://img.shields.io/badge/Documentation-GitHub%20Pages-blueviolet.svg?logo=github" alt="Docs" />
+</p>
+
+<p align="center">
+    <a href="https://amanqs.github.io/indogram/"><b>🌐 Kunjungi Web Dokumentasi Resmi Indogram &rarr;</b></a>
 </p>
 
 ---
