@@ -8,6 +8,9 @@
 </p>
 
 <p align="center">
+    <a href="https://pypi.org/project/indogram/">
+        <img src="https://img.shields.io/pypi/v/indogram.svg?color=blue&logo=pypi&logoColor=white" alt="PyPI Version" />
+    </a>
     <img src="https://img.shields.io/badge/Python-3.10%2B-blue.svg?logo=python&logoColor=white" alt="Python 3.10+" />
     <img src="https://img.shields.io/badge/License-LGPLv3-green.svg" alt="License" />
     <img src="https://img.shields.io/badge/AsyncIO-Ready-orange.svg" alt="AsyncIO Ready" />
