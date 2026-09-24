@@ -55,7 +55,7 @@ pip install "indogram[qrcode]"
 
 ### Development / Direct from Source
 ```bash
-git clone https://github.com/kurigram-org/kurigram indogram
+git clone https://github.com/amanqs/indogram.git
 cd indogram
 pip install .
 ```

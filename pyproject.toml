@@ -65,10 +65,10 @@ keywords = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/kurigram-org/kurigram"
-Documentation = "https://docs.pyrogram.org"
-Source = "https://github.com/kurigram-org/kurigram"
-Issues = "https://github.com/kurigram-org/kurigram/issues"
+Homepage = "https://github.com/amanqs/indogram"
+Documentation = "https://github.com/amanqs/indogram"
+Source = "https://github.com/amanqs/indogram"
+Issues = "https://github.com/amanqs/indogram/issues"
 
 [project.optional-dependencies]
 fast = [
