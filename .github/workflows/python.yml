@@ -1,4 +1,4 @@
-name: Pyrogram
+name: Indogram CI
 
 on:
   push:

@@ -1,11 +1,11 @@
-# Contributing to Kurigram
+# Contributing to Indogram
 
 Thanks for taking the time to contribute! This document covers how to set up a development
 environment, the expected workflow, and what we look for in a pull request.
 
 ## Getting started
 
-Kurigram requires Python `>=3.10` and [`uv`](https://docs.astral.sh/uv/getting-started/installation/).
+Indogram requires Python `>=3.10` and [`uv`](https://docs.astral.sh/uv/getting-started/installation/).
 
 Nothing else has to be set up. Every `make` recipe below runs through `uv run`, which creates
 `.venv` from `uv.lock` and brings it up to date whenever the lock file moves, so there is no
@@ -17,7 +17,7 @@ make sync
 
 Development tools live in the `dev` dependency group and are installed by default; the
 documentation build has its own `docs` group, which `make docs` selects on its own. Neither is an
-extra, so `pip install kurigram[dev]` is not a thing. After changing a dependency in
+extra, so `pip install indogram[dev]` is not a thing. After changing a dependency in
 `pyproject.toml`, run `uv lock` and commit `uv.lock` with the change.
 
 ### Generated code
@@ -207,5 +207,4 @@ A few conventions that have come up repeatedly in code review but aren't enforce
 
 ## Questions
 
-If something is unclear, reach out on the [official chat](https://t.me/kurigram_chat) or follow
-news and announcements on the [official channel](https://t.me/kurigram_news).
+If something is unclear, feel free to open an issue or discussion on GitHub.
