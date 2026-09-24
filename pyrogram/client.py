@@ -278,7 +278,7 @@ class Client(Methods):
             A dict is converted on connect; an already built JSONValue is sent as it is.
     """
 
-    APP_VERSION = f"Pyrogram {__version__}"
+    APP_VERSION = f"Indogram {__version__}"
     DEVICE_MODEL = f"{platform.python_implementation()} {platform.python_version()}"
     SYSTEM_VERSION = f"{platform.system()} {platform.release()}"
 
@@ -708,7 +708,7 @@ class Client(Methods):
             from qrcode import QRCode  # noqa: PLC0415 # ty: ignore[unresolved-import]
         except ImportError as er:
             raise ImportError(
-                "`qrcode` is not installed, run `pip install 'kurigram[qrcode]'`"
+                "`qrcode` is not installed, run `pip install 'indogram[qrcode]'`"
             ) from er
 
         qr_login = QRLogin(self, except_ids or [])

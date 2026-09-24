@@ -5,15 +5,14 @@ requires = ["hatchling>=1.26.3"]
 build-backend = "hatchling.build"
 
 [project]
-name = "Kurigram"
+name = "indogram"
 dynamic = ["version"]
 description = "Elegant, modern and asynchronous Telegram MTProto API framework in Python for users and bots"
 readme = "README.md"
 requires-python = ">=3.10"
-authors = [{ name = "Dan", email = "dan@pyrogram.org" }]
+authors = [{ name = "Indogram Developers" }]
 maintainers = [
-    { name = "KurimuzonAkuma" },
-    { name = "Danipulok", email = "danipulok@gmail.com" },
+    { name = "Indogram Team" },
 ]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
@@ -52,6 +51,7 @@ dependencies = [
 license = "LGPL-3.0-or-later"
 license-files = ["COPYING", "COPYING.lesser", "NOTICE"]
 keywords = [
+    "indogram",
     "telegram",
     "chat",
     "messenger",
@@ -60,14 +60,15 @@ keywords = [
     "client",
     "library",
     "python",
+    "pyrogram",
+    "kurigram",
 ]
 
 [project.urls]
-Homepage = "https://kurigram.icu"
-Documentation = "https://docs.kurigram.icu"
+Homepage = "https://github.com/kurigram-org/kurigram"
+Documentation = "https://docs.pyrogram.org"
 Source = "https://github.com/kurigram-org/kurigram"
 Issues = "https://github.com/kurigram-org/kurigram/issues"
-Community = "https://t.me/kurigram_chat"
 
 [project.optional-dependencies]
 fast = [
@@ -87,7 +88,7 @@ qrcode = [
 
 # `dev` and `docs` are tooling, not something a user of the library installs, so they are
 #  dependency groups rather than extras: `uv sync` takes them from the lock file and `pip
-#  install kurigram[dev]` stops being a thing anyone can type by accident.
+#  install indogram[dev]` stops being a thing anyone can type by accident.
 #
 # Their floors are deliberately above the oldest version that runs. A linter or a
 #  documentation theme resolved a year back gives a different verdict and a different site
@@ -168,6 +169,7 @@ allow-direct-references = true
 #  https://github.com/pypa/hatch/blob/558061c5ecbe7e9b10d81965d4cdc8df05832228/backend/src/hatchling/builders/sdist.py#L330
 [tool.hatch.build.targets.sdist]
 include = [
+    "/indogram",
     "/pyrogram",
     # The generated modules are git-ignored and therefore absent from the archive; a build
     #  from the archive writes them, and it needs the sources and templates to do it.
@@ -179,7 +181,7 @@ include = [
 
 [tool.hatch.build.targets.wheel]
 ignore-vcs = true
-packages = ["pyrogram"]
+packages = ["indogram", "pyrogram"]
 
 [tool.ruff]
 # 100 is where the hand-written tree already sits: p95 is 87 columns and the tail runs to

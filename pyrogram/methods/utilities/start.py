@@ -42,7 +42,7 @@ class Start:
 
         .. note::
 
-            QR code authorization needs the ``qrcode`` extra: ``pip install "kurigram[qrcode]"``.
+            QR code authorization needs the ``qrcode`` extra: ``pip install "indogram[qrcode]"``.
 
         Parameters:
             use_qr (``bool``, *optional*):
