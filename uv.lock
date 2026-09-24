@@ -735,7 +735,7 @@ wheels = [
 ]
 
 [[package]]
-name = "kurigram"
+name = "indogram"
 source = { editable = "." }
 dependencies = [
     { name = "pyaes" },

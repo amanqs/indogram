@@ -180,7 +180,7 @@ A few conventions that have come up repeatedly in code review but aren't enforce
 - **Module-level constants that never change** should be annotated `Final`.
 - **An optional third-party import** (a package the project doesn't depend on, used defensively
   behind a feature that needs it) is marked `# ty: ignore[unresolved-import]`, with the reason
-  saying it's optional and linking to the [docs](https://docs.kurigram.icu) section covering
+  saying it's optional and linking to the [docs](https://amanqs.github.io/indogram/) section covering
   that feature, if there is one.
 
 ## Commit and pull request guidelines
